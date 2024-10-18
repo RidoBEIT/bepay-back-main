@@ -1,0 +1,215 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3469), pid=9528, tid=2344
+#
+# JRE version:  (17.0+35) (build )
+# Java VM: OpenJDK 64-Bit Server VM (17+35, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51089 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=bePay -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages com.beIt.BePayApplication --spring.output.ansi.enabled=always
+
+Host: Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+Time: Fri Sep  9 17:06:59 2022 Afr. centrale Ouest elapsed time: 0.162208 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000246140df8e0):  JavaThread "Unknown thread" [_thread_in_vm, id=2344, stack(0x0000009c4ae00000,0x0000009c4af00000)]
+
+Stack: [0x0000009c4ae00000,0x0000009c4af00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x674afa]
+V  [jvm.dll+0x82eb44]
+V  [jvm.dll+0x8302ee]
+V  [jvm.dll+0x830953]
+V  [jvm.dll+0x245335]
+V  [jvm.dll+0x671ae9]
+V  [jvm.dll+0x6665b2]
+V  [jvm.dll+0x303e3b]
+V  [jvm.dll+0x30b376]
+V  [jvm.dll+0x35b30e]
+V  [jvm.dll+0x35b53f]
+V  [jvm.dll+0x2dad78]
+V  [jvm.dll+0x2dbce4]
+V  [jvm.dll+0x8006a1]
+V  [jvm.dll+0x369081]
+V  [jvm.dll+0x7dfb6c]
+V  [jvm.dll+0x3eb9bf]
+V  [jvm.dll+0x3ed6f1]
+C  [jli.dll+0x5277]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffd84fa4e58, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002461411b990 GCTaskThread "GC Thread#0" [stack: 0x0000009c4af00000,0x0000009c4b000000] [id=6756]
+  0x000002461412d4b0 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000009c4b000000,0x0000009c4b100000] [id=6764]
+  0x000002461412ddd0 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000009c4b100000,0x0000009c4b200000] [id=6024]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd8477b7f7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000246140df1e0] Heap_lock - owner thread: 0x00000246140df8e0
+
+Heap address: 0x0000000081a00000, size: 2022 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000081a00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd84b5dfc9]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (1 events):
+Event: 0.122 Loaded shared library C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff7e9000000 - 0x00007ff7e900e000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\javaw.exe
+0x00007ffdc5850000 - 0x00007ffdc5a48000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffdc5230000 - 0x00007ffdc52ed000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffdc3120000 - 0x00007ffdc33ee000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffdc3620000 - 0x00007ffdc3720000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffd82bf0000 - 0x00007ffd82c09000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\VCRUNTIME140.dll
+0x00007ffdb10f0000 - 0x00007ffdb1108000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\jli.dll
+0x00007ffdc3950000 - 0x00007ffdc3af0000 	C:\Windows\System32\USER32.dll
+0x00007ffdb6840000 - 0x00007ffdb6ada000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffdc3880000 - 0x00007ffdc38a2000 	C:\Windows\System32\win32u.dll
+0x00007ffdc4690000 - 0x00007ffdc472e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffdc4660000 - 0x00007ffdc468a000 	C:\Windows\System32\GDI32.dll
+0x00007ffdc2f70000 - 0x00007ffdc307b000 	C:\Windows\System32\gdi32full.dll
+0x00007ffdc3080000 - 0x00007ffdc311d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffdc55b0000 - 0x00007ffdc55e0000 	C:\Windows\System32\IMM32.DLL
+0x00007ffd88930000 - 0x00007ffd8893c000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\vcruntime140_1.dll
+0x00007ffd82b50000 - 0x00007ffd82be1000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\msvcp140.dll
+0x00007ffd84490000 - 0x00007ffd850d6000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\server\jvm.dll
+0x00007ffdc4bd0000 - 0x00007ffdc4c7e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffdc38b0000 - 0x00007ffdc394c000 	C:\Windows\System32\sechost.dll
+0x00007ffdc4a90000 - 0x00007ffdc4bb5000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffdc4390000 - 0x00007ffdc4398000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffdb1f90000 - 0x00007ffdb1f99000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffdb6bf0000 - 0x00007ffdb6c17000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffdc4c80000 - 0x00007ffdc4ceb000 	C:\Windows\System32\WS2_32.dll
+0x00007ffdb7170000 - 0x00007ffdb717a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffdc1830000 - 0x00007ffdc1842000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffdb50e0000 - 0x00007ffdb50ea000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\jimage.dll
+0x00007ffdb3990000 - 0x00007ffdb3b74000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffdb3e20000 - 0x00007ffdb3e4c000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffdc3560000 - 0x00007ffdc35e2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffdb1110000 - 0x00007ffdb1135000 	C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059\jre\bin\server
+
+VM Arguments:
+jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51089 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=bePay -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: com.beIt.BePayApplication --spring.output.ansi.enabled=always
+java_class_path (initial): C:\Users\faouz\Documents\workspace-spring-tool-suite-4-4.12.1.RELEASE\bePay\target\classes;C:\Users\faouz\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.7.3\spring-boot-starter-data-jpa-2.7.3.jar;C:\Users\faouz\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.7.3\spring-boot-starter-aop-2.7.3.jar;C:\Users\faouz\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;C:\Users\faouz\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.7.3\spring-boot-starter-jdbc-2.7.3.jar;C:\Users\faouz\.m2\repository\com\zaxxer\HikariCP\4.0.3\HikariCP-4.0.3.jar;C:\Users\faouz\.m2\repository\org\springframework\spring-jdbc\5.3.22\spring-jdbc-5.3.22.jar;C:\Users\faouz\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;C:\Users\faouz\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;C:\Users\faouz\.m2\repository\org\hibernate\hibernate-core\5.6.10.Final\hibernate-core-5.6.10.Final.jar;C:\Users\faouz\.m2\repository\org\jboss\logging\jboss-logging\3.4.3.Final\jboss-logging-3.4.3.Final.jar;C:\Users\faouz\.m2\repository\net\bytebuddy\byte-buddy\1.12.13\byte-buddy-1.12.13.jar;C:\Users\faouz\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\faouz\.m2\repository\org\jboss\jandex\2.4.2.Final\jandex-2.4.2.Final.jar;C:\Users\faouz\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\faouz\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\faouz\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.6\jaxb-runtime-2.3.6.jar;C:\Users\faouz\.m2\repository\org\glassfish\jaxb\txw2\2.3.6\txw2-2.3.6.jar;C:\Users\faouz\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.12\istack-commons-runtime-3.0.12.jar;C:\Users\faouz\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2120220672                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 2120220672                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:/Users/faouz/Downloads/spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting/contents/sts-4.12.1.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059/jre/bin/server;C:/Users/faouz/Downloads/spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting/contents/sts-4.12.1.RELEASE//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.0.v20211012-1059/jre/bin;C:\Program Files\Python310\Scripts\;C:\Program Files\Python310\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\faouz\AppData\Local\Microsoft\WindowsApps;;C:\Users\faouz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\faouz\AppData\Roaming\npm;C:\Users\faouz\Downloads\spring-tool-suite-4-4.12.1.RELEASE-e4.21.0-win32.win32.x86_64.self-extracting\contents\sts-4.12.1.RELEASE;
+USERNAME=faouz
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 61 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1889)
+OS uptime: 0 days 1:51 hours
+
+CPU: total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 61 stepping 4 microcode 0x2d, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush
+
+Memory: 4k page, system-wide physical 8083M (402M free)
+TotalPageFile size 32659M (AvailPageFile size 60M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 46M, peak: 174M
+
+vm_info: OpenJDK 64-Bit Server VM (17+35) for windows-amd64 JRE (17+35), built on Sep 14 2021 17:27:39 by "" with MS VC++ 16.7 (VS2019)
+
+END.
